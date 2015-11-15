@@ -1,2 +1,5 @@
-@import 'components/_instafeed.scss';
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700);
+@import 'global/_variables.scss';
 @import 'global/_typography.scss';
+@import 'global/_layout.scss';
+@import 'components/_instafeed.scss';

@@ -1,0 +1,33 @@
+.page-content {
+    padding: 40px 10%;
+    max-width: 1000px;
+}
+
+button {
+    font-family: 'Roboto Mono', monospace;
+    //color: $main-accent;
+    background: transparent;
+    border: solid 2px $offwhite;
+    font-size: 12px;
+    width: 100%;
+    padding: 1em;
+    //transition: ease-out .35s;
+    transition: $ease;
+
+    &:hover{
+      cursor: pointer;
+      color: $offwhite;
+      background-color: #222;
+      //border: solid 2px rgba($offwhite, .25);
+      border: solid 2px $main-accent;
+      //transition: ease-out .35s;
+      transition: $ease;
+    }
+  }
+
+  .intro {
+    text-align: center;
+    margin: 10vh auto 15vh;
+    max-width: 500px
+
+  }

@@ -1,6 +1,27 @@
+*{
+  box-sizing: border-box;
+
+  &:focus {
+    outline: #000 solid 2px;
+  }
+}
+
 html {
+  background-color: $nearblack;
+  color: $offwhite;
   display: flex;
-  font-family:Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
   line-height: 1.5em;
+
+  h1 {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  a,button {
+    color: $main-accent;
+    text-decoration: none;
+  }
+
+
 }

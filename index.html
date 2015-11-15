@@ -2,60 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title Here</title>
+  <title>Daily Decode</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <h1>Hello World</h1>
-  <div id="instafeed"></div>
-  <button id="load-more">load more</button>
+  <div class="page-content">
 
+    <div class="intro">
+
+    <h1>Daily Decode</h1>
+    <p>
+      With each post, I "decode" an idea or foundation of the web: I hand-letter it and say why it matters, going in alphabetical order.
+    </p>
+    <p>
+      A project by <a href="http://instagram.com/thundernixon" target="_blank">@thundernixon</a>.
+    </p>
+    </div>
+
+    <div id="instafeed"></div>
+    <button id="load-more">load more</button>
+
+  </div>
   <script src="js/j.js"></script>
 
   <script type="text/javascript">
 
-    // var feed = new Instafeed({
-    //     get: 'user',
-    //     userId: 2215020551,
-    //     resolution: 'standard_resolution',
-    //     //target: 'dailydecode',
-    //     //clientId: '8d5a58bdf1fe4192bbcb0220b5303c56',
-    //     accessToken: '2215020551.8d5a58b.5ae9e98f7d3b4c6ca984701af05fb260',
-    //     template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p>{{caption}}</p></div>'
-    // });
-    //
-    //
-    //
-    // // run our feed!
-    //
-    // feed.run();
 
+// $(document).ready(function() {
+       var loadButton = document.getElementById('load-more');
 
-    var loadButton = document.getElementById('load-more');
-    var feed = new Instafeed({
-    // every time we load more, run this function
-        get: 'user',
-        userId: 2215020551,
-        resolution: 'standard_resolution',
-        //target: 'dailydecode',
-        //clientId: '8d5a58bdf1fe4192bbcb0220b5303c56',
-        accessToken: '2215020551.8d5a58b.5ae9e98f7d3b4c6ca984701af05fb260',
-        template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p>{{caption}}</p></div>',
-      after: function() {
-          // disable button if no more results to load
-          if (!this.hasNext()) {
-              loadButton.setAttribute('disabled', 'disabled');
-          }
-        },
-    });
+        var feed = new Instafeed({
+        // every time we load more, run this function
 
-    // bind the load more button
-    loadButton.addEventListener('click', function() {
-        feed.next();
-    });
+            get: 'user',
+            userId: 2215020551,
+            resolution: 'standard_resolution',
+            //clientId: '8d5a58bdf1fe4192bbcb0220b5303c56',
+            accessToken: '2215020551.8d5a58b.5ae9e98f7d3b4c6ca984701af05fb260',
+            template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p>{{caption}}</p></div>',
+            limit:5,
+            // sortBy:'most-recent',
 
-    // run our feed!
-    feed.run();
+            after: function() {
+                // disable button if no more results to load
+                if (!this.hasNext()) {
+                    loadButton.setAttribute('disabled', 'disabled');
+                }
+                // before: function() {
+                //   var replaceHtml = str.replace("components", "hey");
+                // }
+            }
+        });
+
+        // bind the load more button
+        loadButton.addEventListener('click', function() {
+            feed.next();
+        });
+
+        // run our feed!
+        feed.run();
+// });
+
   </script>
 
 </body>

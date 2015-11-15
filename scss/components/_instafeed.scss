@@ -5,30 +5,89 @@ h1 {
 #instafeed {
   height: auto;
   width: 100%;
-  background-color: #eee;
+  ///background-color: #eee;
   //padding: 1em;
   float: left;
   // display: flex;
 
   div {
-    margin: 1em auto 2em;
-    padding: 2em;
+    margin: 1em auto 15vh;
+    //padding: 2em;
     display: block;
     float: left;
-    width: 60%;
+    //width: 60%;
     // align-self: center;
+
+    a {
+      float: left;
+    }
+    p{
+      float: left;
+      padding: 0 0 0 2em;
+    }
+    &:nth-child(even) {
+      a{
+        float: right;
+      }
+      p {
+        float: right;
+        padding: 0 2em 0 0;
+      }
+    }
+  }
+
+  a {
+    width: 50%;
+    display: block;
+    border-top: 2px solid rgba($main-accent,0);
+    transition: ease-out .35s;
+    background: transparent;
+
+    &::after {
+      content: "View on Instagram \02197";
+      text-decoration: none;
+      padding: 0 .5em .5em .5em;
+      position: relative;
+      top:-.2em;
+      color: transparent;
+
+      transition: $ease;
+    }
+
+    &:hover{
+      border-top: 2px solid $main-accent;
+      //transition: ease-out .35s;
+      background: $main-accent;
+
+
+      &::after {
+        color: $nearblack;
+        //transition: ease-out .35s;
+        transition: $ease;
+      }
+    }
   }
 
   img {
     width: 100%;
-    max-width: 300px;
-    margin-right: 2em;
-    float: left;
+    //max-width: 300px;
+    //margin-right: 2em;
+    //float: left;
+    transition: $ease;
+
+    // &:hover{
+    //   opacity: .9;
+    //   transition: $ease;
+    // }
+
+
   }
 
   p{
     display: block;
-    width: 66%;
-    float: left;
+    width: 50%;
+    //float: left;
+
+    margin: 0 0 1em;
   }
 }

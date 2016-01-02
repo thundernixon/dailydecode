@@ -1,3 +1,9 @@
+body {
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+
 .page-content {
     padding: 40px 10%;
     max-width: 1000px;
@@ -27,7 +33,17 @@ button {
 
   .intro {
     text-align: center;
-    margin: 10vh auto 15vh;
-    max-width: 500px
+    margin: 41px auto 156px; //77px auto 173px; //10vh auto 15vh;
+    max-width: 660px;
+    color: $accentwhite;
+    font-size: 1.25em;
+    line-height: 1.5;
+    position: relative;
+    left: -4%;
+
+    p {
+      text-align: left;
+      margin-left: 15%;
+    }
 
   }

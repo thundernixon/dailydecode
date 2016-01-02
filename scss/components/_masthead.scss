@@ -1,0 +1,14 @@
+.ascii-masthead pre {
+  font: 8px/9px roboto-mono, monospace;
+  color:#6F6F6F;
+  letter-spacing:4px;
+  position:absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.logo {
+  width: 100%;
+  opacity: 0.85;
+}

@@ -3,9 +3,13 @@
   color: rgba($main-accent,0.5); // #6F6F6F;
   letter-spacing:4px;
   position:fixed;
-  left: 3px;
+  right: 3px;
   top: 0;
   z-index: -1;
+
+  &:last-child{
+    right: 1px;
+  }
 }
 
 .logo {

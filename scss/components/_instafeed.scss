@@ -60,11 +60,12 @@ h1 {
       letter-spacing:4px;
     }
 
-    // &:last-child {
-    //   &::after {
-    //     content: none;
-    //   }
-    // }
+    &:last-child {
+      &::after {
+        content: "";
+        margin: 2em auto;
+      }
+    }
   }
 
   a {

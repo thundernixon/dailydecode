@@ -103,7 +103,7 @@ h1 {
       #instafeed div:nth-child(even) p {
         padding: 0 0 0 0; } }
     #instafeed div::after {
-      content: "`````";
+      content: "//////";
       display: inline-block;
       text-align: center;
       margin: 6em auto;

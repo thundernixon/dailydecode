@@ -167,7 +167,7 @@
               width: imgWidth,
               height: imgHeight,
               orientation: imgOrient,
-              caption: this._getObjectProperty(image, 'caption.text').toString(),
+              caption: this._getObjectProperty(image, 'caption.toString').text(),
               likes: image.likes.count,
               comments: image.comments.count,
               location: this._getObjectProperty(image, 'location.name')

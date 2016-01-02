@@ -30,6 +30,10 @@ h1 {
     p{
       float: left;
       padding: 0 0 0 2em;
+      @media (max-width:650px){
+
+          padding: 0 0;
+      }
     }
     &:nth-child(even) {
       a{
@@ -40,14 +44,7 @@ h1 {
         padding: 0 2em 0 0;
       }
 
-      @media (max-width:650px){
-        a,p{
-          float: left;
-        }
-        p{
-          padding: 0 0 0 0;
-        }
-      }
+
     }
 
     &::after {

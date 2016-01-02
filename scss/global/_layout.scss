@@ -6,7 +6,8 @@ body {
 
 .page-content {
     padding: 40px 10%;
-    max-width: 1000px;
+    max-width: 1200px;
+
 }
 
 button {
@@ -33,7 +34,7 @@ button {
 
   .intro {
     text-align: center;
-    margin: 41px auto 156px; //77px auto 173px; //10vh auto 15vh;
+    margin: 41px auto 64px; // 41px auto 156px; //77px auto 173px; //10vh auto 15vh;
     max-width: 660px;
     color: $accentwhite;
     font-size: 1.25em;
@@ -44,6 +45,17 @@ button {
     p {
       text-align: left;
       margin-left: 15%;
+    }
+
+    a {
+      color: $accentwhite;
+      text-decoration: underline;
+      transition: $ease;
+
+      &:hover {
+        color: $main-accent;
+        transition: $ease;
+      }
     }
 
   }

@@ -9,9 +9,15 @@ h1 {
   //padding: 1em;
   float: left;
   // display: flex;
+  background-color: rgba($nearblack, 0.65);
+  padding: 50px 50px;
+
+  @media (max-width:800px){
+    padding: 50px 12px;
+  }
 
   div {
-    margin: 1em auto 15vh;
+    margin: 1em auto 1em; //1em auto 15vh;
     //padding: 2em;
     display: block;
     float: left;
@@ -35,7 +41,15 @@ h1 {
       }
     }
 
-
+    &::after {
+      content: "/////";
+      display: inline-block;
+      text-align: center;
+      margin: 7em auto;
+      width: 100%;
+      color:$gray;
+      letter-spacing:4px;
+    }
   }
 
   a {
@@ -44,6 +58,10 @@ h1 {
     border-top: 2px solid rgba($main-accent,0);
     transition: ease-out .35s;
     background: transparent;
+
+    @media (max-width:650px){
+      width: 100%;
+    }
 
     &::after {
       content: "View on Instagram \02197";
@@ -91,11 +109,9 @@ h1 {
     //float: left;
 
     margin: 0 0 1em;
-  }
 
-  &::after {
-    content: "`````";
-    margin: 2em auto;
-    width: 100%;
+    @media (max-width:650px){
+      width: 100%;
+    }
   }
 }

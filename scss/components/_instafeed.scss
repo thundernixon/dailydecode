@@ -51,12 +51,12 @@ h1 {
     }
 
     &::after {
-      content: "/////";
+      content: "`````";
       display: inline-block;
       text-align: center;
       margin: 6em auto;
       width: 100%;
-      color:$gray;
+      color:rgba($main-accent,0.5); //$gray;
       letter-spacing:4px;
     }
 

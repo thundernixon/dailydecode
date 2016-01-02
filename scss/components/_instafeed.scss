@@ -51,7 +51,7 @@ h1 {
     }
 
     &::after {
-      content: "`````";
+      content: "//////";
       display: inline-block;
       text-align: center;
       margin: 6em auto;
@@ -88,7 +88,7 @@ h1 {
       color: transparent;
 
       transition: $ease;
-      
+
     }
 
     &:hover{

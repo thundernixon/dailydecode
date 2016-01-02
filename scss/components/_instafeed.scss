@@ -80,7 +80,7 @@ h1 {
 
     &::after {
       font-weight: 700;
-      content: "View on Instagram \02197";
+      content: "View on Instagram";// "View on Instagram \02197";
       text-decoration: none;
       padding: 0 .5em .5em .5em;
       position: relative;
@@ -88,6 +88,7 @@ h1 {
       color: transparent;
 
       transition: $ease;
+      @media (){
     }
 
     &:hover{

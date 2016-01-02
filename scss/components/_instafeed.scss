@@ -10,7 +10,7 @@ h1 {
   float: left;
   // display: flex;
   background-color: rgba($nearblack, 0.65);
-  padding: 50px 50px;
+  padding: 35px 50px;
 
   @media (max-width:800px){
     padding: 50px 12px;
@@ -39,17 +39,32 @@ h1 {
         float: right;
         padding: 0 2em 0 0;
       }
+
+      @media (max-width:650px){
+        a,p{
+          float: left;
+        }
+        p{
+          padding: 0 0 0 0;
+        }
+      }
     }
 
     &::after {
       content: "/////";
       display: inline-block;
       text-align: center;
-      margin: 7em auto;
+      margin: 6em auto;
       width: 100%;
       color:$gray;
       letter-spacing:4px;
     }
+
+    // &:last-child {
+    //   &::after {
+    //     content: none;
+    //   }
+    // }
   }
 
   a {
@@ -64,6 +79,7 @@ h1 {
     }
 
     &::after {
+      font-weight: 700;
       content: "View on Instagram \02197";
       text-decoration: none;
       padding: 0 .5em .5em .5em;

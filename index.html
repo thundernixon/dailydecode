@@ -106,6 +106,7 @@
       <div id=instafeed>
       </div>
       <button id=load-more>load more</button>
+
     </div>
 
     <script src=js/j.js></script><script type=text/javascript>
@@ -131,7 +132,7 @@
             resolution: 'standard_resolution',
             //clientId: '8d5a58bdf1fe4192bbcb0220b5303c56',
             accessToken: '2215020551.8d5a58b.5ae9e98f7d3b4c6ca984701af05fb260',
-            template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p>{{caption}}</p></div>',
+            template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p #insta_caption>{{caption}}</p></div>',
             limit:5,
             // sortBy:'most-recent',
 
@@ -168,6 +169,7 @@
 //          .replace(/'/g, "&#039;")
 //          .replace(/ /g, "&nbsp;");
 //  });
+
 
 
 // $(document).ready(function(){

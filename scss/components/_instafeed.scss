@@ -30,6 +30,10 @@ h1 {
     p{
       float: left;
       padding: 0 0 0 2em;
+      @media (max-width:650px){
+
+          padding: 0 0;
+      }
     }
     &:nth-child(even) {
       a{
@@ -40,18 +44,11 @@ h1 {
         padding: 0 2em 0 0;
       }
 
-      @media (max-width:650px){
-        a,p{
-          float: left;
-        }
-        p{
-          padding: 0 0 0 0;
-        }
-      }
+
     }
 
     &::after {
-      content: "`````";
+      content: "//////";
       display: inline-block;
       text-align: center;
       margin: 6em auto;
@@ -60,11 +57,12 @@ h1 {
       letter-spacing:4px;
     }
 
-    // &:last-child {
-    //   &::after {
-    //     content: none;
-    //   }
-    // }
+    &:last-child {
+      &::after {
+        content: "";
+        margin: 2em auto;
+      }
+    }
   }
 
   a {
@@ -88,7 +86,7 @@ h1 {
       color: transparent;
 
       transition: $ease;
-      
+
     }
 
     &:hover{

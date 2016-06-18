@@ -1,0 +1,18 @@
+.ascii-masthead pre {
+  font: 8px/9px roboto-mono, monospace;
+  color: rgba($main-accent,0.5); // #6F6F6F;
+  letter-spacing:4px;
+  position:fixed;
+  right: 3px;
+  top: 0;
+  z-index: -1;
+
+  &:last-child{
+    right: 1px;
+  }
+}
+
+.logo {
+  width: 100%;
+  opacity: 0.85;
+}

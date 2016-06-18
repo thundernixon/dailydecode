@@ -88,7 +88,29 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </pre></div><div class=page-content><div class=intro><h1><img class=logo src=img/masthead.png alt="Daily Decode"></h1><!--<h1>Daily Decode</h1>--><p><a href=http://instagram.com/dailydecode target=_blank>@DailyDecode</a> is a hand-lettering project celebrating the beauty of web technology. With each post, I "decode" an idea or foundation of front-end design & development: I draw it by hand and say why it matters, going in alphabetical order.</p><p>A project by <a href=http://instagram.com/thundernixon target=_blank>@thundernixon</a>.</p></div><div id=instafeed></div><button id=load-more>load more</button></div><script src=js/j.js></script><script type=text/javascript>
+    </pre></div><div class=page-content>
+
+      <div class=intro>
+        <h1>
+          <img class=logo src=img/masthead.png alt="Daily Decode">
+        </h1><!--<h1>Daily Decode</h1>-->
+        <p>
+          <a href=http://instagram.com/dailydecode target=_blank>@DailyDecode</a> is a hand-lettering project celebrating the beauty of web technology. With each post, I "decode" an idea or foundation of front-end design & development: I draw it by hand and say why it matters, going in alphabetical order.
+        </p>
+
+        <p>
+          A project by <a href=http://instagram.com/thundernixon target=_blank>@thundernixon</a>.
+        </p>
+      </div>
+
+      <div id=instafeed>
+      </div>
+      <button id=load-more>load more</button>
+
+    </div>
+
+    <script src=js/j.js></script><script type=text/javascript>
+
 
 
 // $(document).ready(function() {
@@ -97,12 +119,20 @@
         var feed = new Instafeed({
         // every time we load more, run this function
 
+        success: function(res) {
+            for(var i= 0; i < res.data.length; i++){
+                res.data[i].caption.text = res.data[i].caption.text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); // stole this from what you had down there
+                console.log(res.data[i].caption.text);
+            }
+            console.log(res);
+        },
+
             get: 'user',
             userId: 2215020551,
             resolution: 'standard_resolution',
             //clientId: '8d5a58bdf1fe4192bbcb0220b5303c56',
             accessToken: '2215020551.8d5a58b.5ae9e98f7d3b4c6ca984701af05fb260',
-            template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p>{{caption}}</p></div>',
+            template: '<div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a><p #insta_caption>{{caption}}</p></div>',
             limit:5,
             // sortBy:'most-recent',
 
@@ -141,15 +171,18 @@
 //  });
 
 
+
 // $(document).ready(function(){
 //     // $("#insta_caption").text();
 //     $("#insta_caption").addClass("red");
 // });
-  </script><style>
+  </script>
+  <style>
   .red {background-color: #ff0000;}
-  </style><script>
- $(document).ready(function(){
-   ("#insta_caption").addClass("red");
- }
+  </style>
+  <script>
+ // $(document).ready(function(){
+ //   ("#insta_caption").addClass("red");
+ // }
   // $("#insta_caption").text();
   </script></body></html>
